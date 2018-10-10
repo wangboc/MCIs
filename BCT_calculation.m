@@ -30,7 +30,7 @@ end
 %% 阈值处理
 data_threshed = threshold_proportional(data, PSW_optimal);
 %% 二值化
-% binarized_network = weight_conversion(data_threshed, 'binarize');
+binarized_network = weight_conversion(data_threshed, 'binarize');
 %% 计算特性
 [   strength, ...
     clustering_coef, ...
@@ -41,6 +41,6 @@ data_threshed = threshold_proportional(data, PSW_optimal);
     kcoreness, ...
     flow_efficiency, ...
     pagerank...
-] = Features_calculation(data_threshed);
+] = Features_calculation(binarized_network);
 
 
