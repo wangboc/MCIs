@@ -4,10 +4,10 @@ function [SelectedTrainData] = WrapperFeatureSelection(Matrix)
 %%
 X = Matrix(:, 2:size(Matrix, 2));
 y = Matrix(:, 1);
-X = mapstd(X')';
+% X = mapstd(X')';
 
 c = cvpartition(y,'KFold',10);
-opts = statset('display', 'iter',  'TolTypeFun','rel', 'UseParallel', true);
+opts = statset('display', 'iter',  'TolTypeFun','abs');
 fun = @(train_data,train_labels,test_data,test_labels) ...
        sum(predict(fitcsvm(train_data,train_labels,'KernelFunction','rbf'), test_data) ~= test_labels); 
 

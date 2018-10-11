@@ -33,15 +33,15 @@ for index = 1:size(classes)
                        ];
             type = char(classes(index, 1));
             if type(1) == '0'
-                type = 0;
-            elseif type(1) == '1'
                 type = 1;
-            elseif type(1) == '2'
+            elseif type(1) == '1'
                 type = 2;
-            elseif type(1) == '3'
+            elseif type(1) == '2'
                 type = 3;
-            elseif type(1) == '4'
+            elseif type(1) == '3'
                 type = 4;
+            elseif type(1) == '4'
+                type = 5;
             end
             subject = [type, features];
             subjects(subject_index, :) = subject;
