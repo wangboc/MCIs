@@ -1,3 +1,4 @@
+tic;
 clear;
 addpath(genpath(pwd));
 
@@ -32,15 +33,15 @@ for index = 1:size(classes)
                        ];
             type = char(classes(index, 1));
             if type(1) == '0'
-                type = 00001;
+                type = 0;
             elseif type(1) == '1'
-                type = 00010;
+                type = 1;
             elseif type(1) == '2'
-                type = 00100;
+                type = 2;
             elseif type(1) == '3'
-                type = 01000;
+                type = 3;
             elseif type(1) == '4'
-                type = 10000;
+                type = 4;
             end
             subject = [type, features];
             subjects(subject_index, :) = subject;
@@ -50,3 +51,4 @@ for index = 1:size(classes)
     name = ['./Data/BCTs/' char(classes(index, 1)) '.mat'];
     save(name, 'subjects');      
 end
+toc;

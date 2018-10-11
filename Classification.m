@@ -1,3 +1,4 @@
+tic;
 clear;
 addpath(genpath(pwd));
 
@@ -35,7 +36,7 @@ LMCI_vs_AD   = cat(1, Subject_LMCI, Subject_AD);
 
  
 %% Filter Feature selection
-[FilteredMatrix, FilterdIndex] = Filter_Feature_Rank_importance(EMCI_vs_MCI, 1/2);
+[FilteredMatrix, FilterdIndex] = Filter_Feature_Rank_importance(HC_vs_EMCI, 1/2);
 %% Wrapper Feature selection
-Selected_train_data = WrapperFeatureSelection(FilteredMatrix);
-
+Selected_train_data = WrapperFeatureSelection(HC_vs_EMCI);
+toc;

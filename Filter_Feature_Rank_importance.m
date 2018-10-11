@@ -4,7 +4,8 @@ function [FilteredMatrix, FilterdIndex] =  Feature_Rank_importance(Matrix, p)
 %%
 X = Matrix(:, 2:size(Matrix, 2));
 Y = Matrix(:, 1);
-[ranks,weights] = relieff(X,Y,10);
+
+[ranks,weights] = relieff(X,Y,5, 'method','classification');
 
 selected_columns = ranks(1:round(size(ranks, 2) * p));
 FilteredMatrix = [Y X(:, selected_columns)];

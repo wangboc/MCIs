@@ -4,16 +4,17 @@ function [SelectedTrainData] = WrapperFeatureSelection(Matrix)
 %%
 X = Matrix(:, 2:size(Matrix, 2));
 y = Matrix(:, 1);
-X = NormalizeFeature(X);
+X = mapstd(X')';
 
 c = cvpartition(y,'KFold',10);
-opts = statset('display', 'iter',  'TolTypeFun','abs', 'UseParallel', true);
+opts = statset('display', 'iter',  'TolTypeFun','rel', 'UseParallel', true);
 fun = @(train_data,train_labels,test_data,test_labels) ...
        sum(predict(fitcsvm(train_data,train_labels,'KernelFunction','rbf'), test_data) ~= test_labels); 
 
 [fs,history] = sequentialfs(fun,X,y,'cv',c,'options',opts);
-
-
+SelectedLabel = 1:size(Matrix, 2);
+SelectedLabel = SelectedLabel(fs);
+SelectedTrainData = [X(:, SelectedLabel), y];
 %% temp results 
 % HC_vs_EMCI 
 % [ 2 73];                           Accuracy:95.8%
@@ -44,8 +45,4 @@ fun = @(train_data,train_labels,test_data,test_labels) ...
 % LMCI_vs_AD
 % [24 28 254 1514]; Accuracy:87.5%
 
-
-SelectedLabel = 1:1620;
-SelectedLabel = SelectedLabel(fs)
-SelectedTrainData = [X(:, SelectedLabel), y];
 
