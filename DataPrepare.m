@@ -1,8 +1,9 @@
+clear;
 addpath(genpath(pwd));
 
 classes = {  '0.HC'; '1.EMCI'; '2.MCI'; '3.LMCI'; '4.AD';};
 for index = 1:size(classes)
-    path = ['./Data/'  char(classes(index, 1)) '/'];
+    path = ['./Data/Connectivity/'  char(classes(index, 1)) '/'];
     files = dir(path);
     subjects = zeros(24, 3241);
     subject_index = 1;
@@ -19,7 +20,7 @@ for index = 1:size(classes)
               flow_efficiency, ...
               pagerank...
             ] = BCT_calculation(result);
-            features = [  strength, ...
+            features = [strength, ...
                           clustering_coef, ...
                           local_efficiency, ...
                           betweenness, ...
@@ -46,6 +47,6 @@ for index = 1:size(classes)
             subject_index = subject_index + 1;
         end
     end
-    name = [char(classes(index, 1)) '.mat'];
+    name = ['./Data/BCTs/' char(classes(index, 1)) '.mat'];
     save(name, 'subjects');      
 end

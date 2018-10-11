@@ -8,16 +8,16 @@ load('./Data/BCTs/0.HC.mat');
 Subject_HC = subjects;
 
 load('./Data/BCTs/1.EMCI.mat');
-Subject_EMCI = NormalizeFeature(subjects);
+Subject_EMCI = subjects;
 
 load('./Data/BCTs/2.MCI.mat');
-Subject_MCI = NormalizeFeature(subjects);
+Subject_MCI = subjects;
 
 load('./Data/BCTs/3.LMCI.mat');
-Subject_LMCI = NormalizeFeature(subjects);
+Subject_LMCI = subjects;
 
 load('./Data/BCTs/4.AD.mat');
-Subject_AD = NormalizeFeature(subjects);
+Subject_AD = subjects;
 
 HC_vs_EMCI   = cat(1, Subject_HC, Subject_EMCI);
 HC_vs_MCI    = cat(1, Subject_HC, Subject_MCI);
@@ -35,7 +35,7 @@ LMCI_vs_AD   = cat(1, Subject_LMCI, Subject_AD);
 
  
 %% Filter Feature selection
-[FilteredMatrix, FilterdIndex] = Filter_Feature_Rank_importance(LMCI_vs_AD, 1/2);
+[FilteredMatrix, FilterdIndex] = Filter_Feature_Rank_importance(EMCI_vs_MCI, 1/2);
 %% Wrapper Feature selection
 Selected_train_data = WrapperFeatureSelection(FilteredMatrix);
 

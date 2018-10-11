@@ -11,6 +11,7 @@ function [strength, ...
 %% 利用BCT工具箱，计算网络拓扑值
 %   
 %   Data 是相关矩阵
+%   HDU, Bocheng Wang 2018.10
 
 %% Search for maximum GCE with the optimal threshold value
 GCE_max = 0;

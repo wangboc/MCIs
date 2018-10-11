@@ -14,7 +14,11 @@ clustering_coef = clustering_coef_bu(network)';
 local_efficiency = efficiency_bin(network, 1)';
 betweenness = betweenness_bin(network);
 eigenvector = eigenvector_centrality_und(network)';
+%% 处理 subgraph 中的异常值
 subgraph = subgraph_centrality(network)';
+% index = find(subgraph < 10);
+% subgraph(index) = NaN;
+%%
 kcoreness = kcoreness_centrality_bu(network);
 flow_coefficiency = flow_coef_bd(network);
 pagerank = pagerank_centrality(network, 0.85)';
