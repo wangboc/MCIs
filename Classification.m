@@ -40,7 +40,7 @@ LMCI_vs_AD   = cat(1, Subject_LMCI, Subject_AD);
 Selected_train_data = WrapperFeatureSelection(FilteredMatrix, 0);
 %% Matlab Machine learning Toolbox ...
 %% libSVM tools
-% libSVM_result_filename = 'libSVM_result.txt';
-% matrix2libsvmformat(Selected_train_data, libSVM_result_filename);
-% output = evaluateSVM(libSVM_result_filename);
+libSVM_result_filename = 'tempfile\libSVM_result.txt';
+matrix2libsvmformat(Selected_train_data, libSVM_result_filename);
+output = evaluateSVM(libSVM_result_filename)
 toc;

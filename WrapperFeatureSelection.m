@@ -10,10 +10,10 @@ function [SelectedTrainData] = WrapperFeatureSelection(Matrix, use_predefined_se
 
 X = Matrix(:, 2:size(Matrix, 2));
 y = Matrix(:, 1);
-SelectedLabel = [];
 
+SelectedLabel = [];
 if use_predefined_sequence == 1
-    SelectedLabel = [1 24 27 73 264 633 1341];
+    SelectedLabel = [3 56 116 341 646 980];
 else
     c = cvpartition(y,'KFold',10);
     opts = statset('display', 'iter',  'TolTypeFun','abs');
