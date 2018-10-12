@@ -61,7 +61,8 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [21 22 79 185 ];                                          Accuracy: 95.8%
 % [21 732 907 ];                                            Accuracy: 91.7%
 % [21 79 185 862 ];                                         Accuracy: 91.7%
-% [19 216 408 484 ];                                        Accuracy: 85.4%
+% [21 732 907
+
 %% temp results  EMCI_vs_MCI
 % 
 %% temp results  EMCI_vs_LMCI
