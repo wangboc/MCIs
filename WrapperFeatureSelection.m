@@ -50,6 +50,10 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [11 58 140 149 1174];                                     Accuracy: 83.3%
 % [4 9 23 33 87 175 176 1054 ];                             Accuracy: 95.8%
 % [5 6 27 161 172 282 ];                                    Accuracy: 85.4%
+% [40 51 58 67 143 337];                                    Accuracy: 87.5%
+% [8 112 172 418 541 1014 ];                                Accuracy: 85.4%
+% [5 6 112 167 172 197 239 1504 ];                          Accuracy: 97.9%
+
 %% temp results  HC_vs_AD
 % 
 %% temp results  EMCI_vs_MCI
