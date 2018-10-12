@@ -1,8 +1,11 @@
 % Classification for HC, MCI and AD
 % HDU, Bocheng Wang 2018.10
+
 tic;
 clear;
 addpath(genpath(pwd));
+
+
 %% load data
 load('./Data/BCTs/0.HC.mat');
 Subject_HC = subjects;
@@ -40,7 +43,7 @@ LMCI_vs_AD   = cat(1, Subject_LMCI, Subject_AD);
 Selected_train_data = WrapperFeatureSelection(FilteredMatrix, 0);
 %% Matlab Machine learning Toolbox ...
 %% libSVM tools
-libSVM_result_filename = 'tempfile\libSVM_result.txt';
+libSVM_result_filename = 'tempfiles\libSVM_result.txt';
 matrix2libsvmformat(Selected_train_data, libSVM_result_filename);
 output = evaluateSVM(libSVM_result_filename)
 toc;
