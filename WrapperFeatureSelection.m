@@ -1,4 +1,4 @@
-function [SelectedTrainData] = WrapperFeatureSelection(Matrix, use_predefined_sequence)
+function [SelectedTrainData, SelectedFeatures_in_RankImportanceOrder] = WrapperFeatureSelection(Matrix, use_predefined_sequence)
 %% Implement sequentialfs Matlab function
 % 
 % Suitable features tested may be used to train model.
@@ -24,7 +24,7 @@ else
     SelectedLabel = SelectedLabel(fs);
 end
 SelectedTrainData = [X(:, SelectedLabel), y];
-
+SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 %% temp results  HC_vs_EMCI 
 % 
 % [1 27 38 58 291 ];                                        Accuracy: 93.8%
@@ -48,7 +48,8 @@ SelectedTrainData = [X(:, SelectedLabel), y];
 %% temp results  HC_vs_LMCI
 % [32 142 270 297 375];                                     Accuracy: 91.7%
 % [11 58 140 149 1174];                                     Accuracy: 83.3%
-
+% [4 9 23 33 87 175 176 1054 ];                             Accuracy: 95.8%
+% [5 6 27 161 172 282 ];                                    Accuracy: 85.4%
 %% temp results  HC_vs_AD
 % 
 %% temp results  EMCI_vs_MCI

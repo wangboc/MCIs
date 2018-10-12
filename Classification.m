@@ -40,10 +40,11 @@ LMCI_vs_AD   = cat(1, Subject_LMCI, Subject_AD);
 %% Filter Feature selection
 [FilteredMatrix, FilterdIndex] = Filter_Feature_Rank_importance(HC_vs_LMCI, 1/2);
 %% Wrapper Feature selection
-Selected_train_data = WrapperFeatureSelection(FilteredMatrix, 0);
+[Selected_train_data, SelectedFeatures_in_RankImportanceOrder] = WrapperFeatureSelection(FilteredMatrix, 0);
+RankImportanceOrder_2_FeatureName(SelectedFeatures_in_RankImportanceOrder);
 %% Matlab Machine learning Toolbox ...
 %% libSVM tools
 libSVM_result_filename = 'tempfiles\libSVM_result.txt';
 matrix2libsvmformat(Selected_train_data, libSVM_result_filename);
-output = evaluateSVM(libSVM_result_filename)
+libSVM_Accuracy_Output = evaluateSVM(libSVM_result_filename);
 toc;
