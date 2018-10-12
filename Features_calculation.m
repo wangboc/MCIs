@@ -9,12 +9,12 @@ function [   strength, ...
              pagerank...
 ] = Features_calculation(network)
 %%
-strength = mapstd(strengths_und(network));
-clustering_coef = mapstd(clustering_coef_bu(network)');
-local_efficiency = mapstd(efficiency_bin(network, 1)');
-betweenness = mapstd(betweenness_bin(network));
-eigenvector = mapstd(eigenvector_centrality_und(network)');
-subgraph = mapstd(log10(subgraph_centrality(network)'));
-kcoreness = mapstd(kcoreness_centrality_bu(network));
-flow_coefficiency = mapstd(flow_coef_bd(network));
-pagerank = mapstd(pagerank_centrality(network, 0.85)');
+strength = mapminmax(strengths_und(network));
+clustering_coef = mapminmax(clustering_coef_bu(network)');
+local_efficiency = mapminmax(efficiency_bin(network, 1)');
+betweenness = mapminmax(betweenness_bin(network));
+eigenvector = mapminmax(eigenvector_centrality_und(network)');
+subgraph = mapminmax(log10(subgraph_centrality(network)'));
+kcoreness = mapminmax(kcoreness_centrality_bu(network));
+flow_coefficiency = mapminmax(flow_coef_bd(network));
+pagerank = mapminmax(pagerank_centrality(network, 0.85)');

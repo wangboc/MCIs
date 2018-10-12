@@ -35,13 +35,13 @@ for index = 1:size(classes)
             if type(1) == '0'
                 type = 1;
             elseif type(1) == '1'
-                type = 2;
+                type = 10;
             elseif type(1) == '2'
-                type = 3;
+                type = 100;
             elseif type(1) == '3'
-                type = 4;
+                type = 1000;
             elseif type(1) == '4'
-                type = 5;
+                type = 10000;
             end
             subject = [type, features];
             subjects(subject_index, :) = subject;

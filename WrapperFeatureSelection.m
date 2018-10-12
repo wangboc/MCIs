@@ -16,7 +16,12 @@ SelectedLabel = SelectedLabel(fs);
 SelectedTrainData = [X(:, SelectedLabel), y];
 %% temp results 
 % HC_vs_EMCI 
-%  
+% mapstd;
+%  [7 70 151 311 1529 ]; Accuracy: 83.3%
+% [7 94 141 147]; Accuracy: 91.7%
+% [7 112 216 444 541]; Accuracy: 91.7%
+% mapminmax;
+% [1 27 38 58 291 ]; Accuracy:93.8%
 %% temp results 
 % HC_vs_MCI
 %  
