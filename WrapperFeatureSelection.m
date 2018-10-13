@@ -120,9 +120,17 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [66 623 1077];                                            Accuracy: 87.5%
 % [66 533 621 766 1018 1312 ];                              Accuracy: 89.6%
 % [66 193 732 ];                                            Accuracy: 85.4%
-
+% [66 121 193 326 818 ];                                    Accuracy: 93.8%
 %% temp results  LMCI_vs_AD
 % 
-%  
-
+% [16 18 99 162 173 ];                                      Accuracy: 91.7%
+% [27 78 498 1081 ];                                        Accuracy: 91.7%
+% [27 78 388 967 ];                                         Accuracy: 91.7%
+% [4 10 71 157 320];                                        Accuracy: 89.6%
+% [4 8 54 71 204 1340 ];                                    Accuracy: 95.8%
+% [4 8 54 71 377 1340 ];                                    Accuracy: 87.5%
+% [4 254 476 791 ];                                         Accuracy: 93.8%
+% [4 109 765 1146];                                         Accuracy: 85.4%
+% [4 41 130 249 313 440 ];                                  Accuracy: 95.8%
+% [27 388 664 ];                                            Accuracy: 85.4%
 
