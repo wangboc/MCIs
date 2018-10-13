@@ -5,7 +5,6 @@ function [SelectedTrainData, SelectedFeatures_in_RankImportanceOrder] = WrapperF
 % See the following temp results
 
 % HDU, Bocheng Wang 2018.10.12
-% HDU, Bocheng Wang 2018.10
 %%
 
 X = Matrix(:, 2:size(Matrix, 2));
@@ -27,6 +26,9 @@ SelectedTrainData = [X(:, SelectedLabel), y];
 SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 %% temp results  HC_vs_EMCI 
 % 
+%
+% Selected Features in Rank Importance Order          Matlab Machine Learning Toolbox
+%
 % [1 27 38 58 291 ];                                        Accuracy: 93.8%
 % [1 24 27 73 264 633 1341 ];                               Accuracy: 95.8%
 % [1 151 252 452 832 1075 1554];                            Accuracy: 93.8%
@@ -95,9 +97,19 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [2 6 70 487 1609];                                        Accuracy: 91.7%
 % [2 8 77 121 ];                                            Accuracy: 91.7%
 % [2 6 8 70 821];                                           Accuracy: 93.8%
+% [9 22 620 653 986 ];                                      Accuracy: 91.7%
+% [2 8 15 30 ];                                             Accuracy: 87.5%
 %% temp results  MCI_vs_LMCI
 % 
-% 
+% [16 26 91 160 257 292 694 1121 ];                         Accuracy: 89.6%
+% [33 37 76 119 365];                                       Accuracy: 89.6%
+% [16 45 47 292 794 ];                                      Accuracy: 87.5%
+% [18 24 47 96 112 219 1304];                               Accuracy: 87.5%
+% [16 45 47 112 292 794 ];                                  Accuracy: 89.6%
+% [3 84 89 224 247 668 ];                                   Accuracy: 93.8%
+% [57 98 119 129 153 156 174 330];                          Accuracy: 97.9%
+% [57 168 353 401 611 794 905 ];                            Accuracy: 95.8%
+% [5 84 310 ];                                              Accuracy: 91.7%
 %% temp results  MCI_vs_AD
 % 
 %  
