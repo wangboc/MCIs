@@ -1,7 +1,6 @@
 function [] = matrix2libsvmformat (matrix, filename)
 %% convert matlab matrix into the format of libSVM required.
 
-
 if exist(['.\' filename], 'file')
     delete(['.\' filename]);
 end

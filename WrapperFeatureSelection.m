@@ -67,7 +67,15 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [21 79 185 862 ];                                         Accuracy: 89.6%
 %% temp results  EMCI_vs_MCI
 % 
-%
+% [10 20 120 160 169 343];                                  Accuracy: 87.5%
+% [10 294 428 715 966 ];                                    Accuracy: 81.3%
+% [10 409 487 504 892 1318 ];                               Accuracy: 91.7%
+% [10 504 1220 ];                                           Accuracy: 87.5%
+% [10 296 343 449 504 779 969 ];                            Accuracy: 85.4%
+% [14 68 169 343 ];                                         Accuracy: 89.6%
+% [10 74 317 459 504 1017 1311 ];                           Accuracy: 85.4%
+% [53 60 68 138 302 344 1195];                              Accuracy: 83.3%
+% [10 276 316 475 504 1395 ];                               Accuracy: 83.3%
 %% temp results  EMCI_vs_LMCI
 % 
 % 
