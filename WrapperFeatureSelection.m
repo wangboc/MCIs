@@ -46,6 +46,7 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [3 56 116 341 646 980 ];                                  Accuracy: 91.7%
 % [2 3 7 13 95 96 222];                                     Accuracy: 87.5%
 %% temp results  HC_vs_LMCI
+%
 % [32 142 270 297 375];                                     Accuracy: 91.7%
 % [11 58 140 149 1174];                                     Accuracy: 83.3%
 % [4 9 23 33 87 175 176 1054 ];                             Accuracy: 95.8%
@@ -55,6 +56,7 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [5 6 112 167 172 197 239 1504 ];                          Accuracy: 97.9%
 % [5 172 191 355 492 1267 ];                                Accuracy: 89.6%
 %% temp results  HC_vs_AD
+%
 % [83 208 223 238 350 772 ];                                Accuracy: 91.7%
 % [21 249 308 548 1381];                                    Accuracy: 87.5%
 % [83 238 384 558 652];                                     Accuracy: 93.8%
@@ -62,8 +64,10 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [21 732 907 ];                                            Accuracy: 91.7%
 % [21 79 185 862 ];                                         Accuracy: 91.7%
 % [19 216 408 484 ];                                        Accuracy: 85.4%
+% [21 79 185 862 ];                                         Accuracy: 89.6%
 %% temp results  EMCI_vs_MCI
 % 
+%
 %% temp results  EMCI_vs_LMCI
 % 
 % 
