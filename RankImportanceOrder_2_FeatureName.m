@@ -8,6 +8,6 @@ for index = 1:size(features_index, 2)
     feature_name_index = fix(feature/360);    
     feature_location = rem(feature, 360);
     [name, area] = ParseFeature(feature_name_index, feature_location);
-    disp(['特征类型：' name '  特征所在分区：' char(area)]);
+    disp(['分区ID：' num2str(feature_location) ' 特征类型：' name '  特征所在分区：' char(area)]);
 end
 

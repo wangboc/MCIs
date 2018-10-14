@@ -12,7 +12,7 @@ y = Matrix(:, 1);
 
 SelectedLabel = [];
 if use_predefined_sequence == 1
-    SelectedLabel = [3 56 116 341 646 980];
+    SelectedLabel = [4 8 54 71 204 1340 ];
 else
     c = cvpartition(y,'KFold',10);
     opts = statset('display', 'iter',  'TolTypeFun','abs');
@@ -31,7 +31,7 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 %
 % [1 27 38 58 291 ];                                        Accuracy: 93.8%
 % [1 24 27 73 264 633 1341 ];                               Accuracy: 95.8%
-% [1 151 252 452 832 1075 1554];                            Accuracy: 93.8%
+% [1 151 252 452 832 1075 1554];                            Accuracy: 93.8%  ¡Ì used in paper
 % [1 73 401 422 654];                                       Accuracy: 91.7%
 % [1 27 38 48 291 ];                                        Accuracy: 87.5%
 % [1 73 87 401 633 750 ];                                   Accuracy: 87.5%
@@ -39,7 +39,7 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [1 4 73 87 174 633];                                      Accuracy: 85.4%
 %% temp results  HC_vs_MCI
 % 
-% [2 3 470 575 626 784];                                    Accuracy: 93.8%
+% [2 3 470 575 626 784];                                    Accuracy: 91.7%  ¡Ì used in paper
 % [3 64 96 250 357 598 ];                                   Accuracy: 87.5%
 % [29 219 988 1050 ];                                       Accuracy: 89.6%
 % [3 232 505 519 748 985 ];                                 Accuracy: 91.7%
@@ -55,14 +55,14 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [5 6 27 161 172 282 ];                                    Accuracy: 85.4%
 % [40 51 58 67 143 337];                                    Accuracy: 87.5%
 % [8 112 172 418 541 1014 ];                                Accuracy: 85.4%
-% [5 6 112 167 172 197 239 1504 ];                          Accuracy: 97.9%
+% [5 6 112 167 172 197 239 1504 ];                          Accuracy: 95.8%  ¡Ì used in paper
 % [5 172 191 355 492 1267 ];                                Accuracy: 89.6%
 %% temp results  HC_vs_AD
 %
 % [83 208 223 238 350 772 ];                                Accuracy: 91.7%
 % [21 249 308 548 1381];                                    Accuracy: 87.5%
 % [83 238 384 558 652];                                     Accuracy: 93.8%
-% [21 22 79 185 ];                                          Accuracy: 95.8%
+% [21 22 79 185 ];                                          Accuracy: 95.8%  ¡Ì used in paper
 % [21 732 907 ];                                            Accuracy: 91.7%
 % [21 79 185 862 ];                                         Accuracy: 91.7%
 % [19 216 408 484 ];                                        Accuracy: 85.4%
@@ -71,7 +71,7 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % 
 % [10 20 120 160 169 343];                                  Accuracy: 87.5%
 % [10 294 428 715 966 ];                                    Accuracy: 81.3%
-% [10 409 487 504 892 1318 ];                               Accuracy: 91.7%
+% [10 409 487 504 892 1318 ];                               Accuracy: 91.7%  ¡Ì used in paper
 % [10 504 1220 ];                                           Accuracy: 87.5%
 % [10 296 343 449 504 779 969 ];                            Accuracy: 85.4%
 % [14 68 169 343 ];                                         Accuracy: 89.6%
@@ -107,7 +107,7 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [18 24 47 96 112 219 1304];                               Accuracy: 87.5%
 % [16 45 47 112 292 794 ];                                  Accuracy: 89.6%
 % [3 84 89 224 247 668 ];                                   Accuracy: 93.8%
-% [57 98 119 129 153 156 174 330];                          Accuracy: 97.9%
+% [57 98 119 129 153 156 174 330];                          Accuracy: 97.9%  ¡Ì used in paper
 % [57 168 353 401 611 794 905 ];                            Accuracy: 95.8%
 % [5 84 310 ];                                              Accuracy: 91.7%
 %% temp results  MCI_vs_AD
@@ -127,7 +127,7 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [27 78 498 1081 ];                                        Accuracy: 91.7%
 % [27 78 388 967 ];                                         Accuracy: 91.7%
 % [4 10 71 157 320];                                        Accuracy: 89.6%
-% [4 8 54 71 204 1340 ];                                    Accuracy: 95.8%
+% [4 8 54 71 204 1340 ];                                    Accuracy: 95.8%  ¡Ì used in paper
 % [4 8 54 71 377 1340 ];                                    Accuracy: 87.5%
 % [4 254 476 791 ];                                         Accuracy: 93.8%
 % [4 109 765 1146];                                         Accuracy: 85.4%
