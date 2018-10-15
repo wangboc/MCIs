@@ -12,7 +12,8 @@ y = Matrix(:, 1);
 
 SelectedLabel = [];
 if use_predefined_sequence == 1
-    SelectedLabel = [4 8 54 71 204 1340 ];
+    SelectedLabel =  [27 388 664 ];    
+
 else
     c = cvpartition(y,'KFold',10);
     opts = statset('display', 'iter',  'TolTypeFun','abs');
