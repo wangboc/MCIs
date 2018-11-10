@@ -142,3 +142,6 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 %% temp result HC_vs_EMCI_LMCI_AD
 % [8 295 419 724 743 881 1095 1272 1341 1543 ];             Accuracy: 50%
 % [12 22 277 610 1439 1543 ];                               Accuracy: 53%
+
+%% temp result HC_vs_MCI_vs_AD
+% [45 62 104 335 1479 ];                                    Accuracy: 73.6%
