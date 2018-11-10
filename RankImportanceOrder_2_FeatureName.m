@@ -1,6 +1,6 @@
 function  RankImportanceOrder_2_FeatureName(FilterdIndex, SelectedFeatures_in_RankImportanceOrder)
 
-% for test SelectedFeatures_in_RankImportanceOrder = [4 9 23 33 87 175 176 1054 ];
+% for test   SelectedFeatures_in_RankImportanceOrder = [10 234 396 546 692 ];
 
 features_index = FilterdIndex(SelectedFeatures_in_RankImportanceOrder);
 for index = 1:size(features_index, 2)

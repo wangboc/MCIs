@@ -12,13 +12,17 @@ y = Matrix(:, 1);
 
 SelectedLabel = [];
 if use_predefined_sequence == 1
-    SelectedLabel =  [27 388 664 ];    
+    SelectedLabel =  [8 295 419 724 743 881 1095 1272 1341 1543 ];    
 
 else
     c = cvpartition(y,'KFold',10);
-    opts = statset('display', 'iter',  'TolTypeFun','abs');
+    opts = statset('display', 'iter',  'TolTypeFun','rel', 'TolFun', 1e-16, 'TolX', 1e-12);
+    % multi-class recognition
     fun = @(train_data,train_labels,test_data,test_labels) ...
-       sum(predict(fitcsvm(train_data,train_labels,'KernelFunction','rbf'), test_data) ~= test_labels); 
+        sum(predict(fitcecoc(train_data,train_labels), test_data) ~= test_labels);   
+    % end multi-class
+    % fun = @(train_data,train_labels,test_data,test_labels) ...
+    %   sum(predict(fitcsvm(train_data,train_labels,'KernelFunction','rbf'), test_data) ~= test_labels); 
     [fs,history] = sequentialfs(fun,X,y,'cv',c,'options',opts);
     SelectedLabel = 1:size(Matrix, 2);
     SelectedLabel = SelectedLabel(fs);
@@ -84,7 +88,7 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [10 16 103 272 456 780 1180]                              Accuracy: 81.3%
 % [108 275 496 1079 1159 ];                                 Accuracy: 81.3%
 % [9 102 206 275 302 722 ];                                 Accuracy: 83.3%
-% [10 234 396 546 692 ];                                    Accuracy: 87.5%
+% [10 234 396 546 692 ];                                    Accuracy: 87.5%  ¡Ì used in paper
 % [10 39 234 563 1213 ];                                    Accuracy: 87.5%
 % [45 63 275 519 1029 1268 ];                               Accuracy: 85.4%
 % [10 12 39 64 245 261 540 1218 ];                          Accuracy: 85.4%
@@ -135,3 +139,6 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [4 41 130 249 313 440 ];                                  Accuracy: 95.8%
 % [27 388 664 ];                                            Accuracy: 85.4%
 
+%% temp result HC_vs_EMCI_LMCI_AD
+% [8 295 419 724 743 881 1095 1272 1341 1543 ];             Accuracy: 50%
+% [12 22 277 610 1439 1543 ];                               Accuracy: 53%

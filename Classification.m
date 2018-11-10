@@ -37,9 +37,11 @@ MCI_vs_AD    = cat(1, Subject_MCI, Subject_AD);
 
 LMCI_vs_AD   = cat(1, Subject_LMCI, Subject_AD);
 
+HC_vs_EMCI_LMCI_AD = cat(1, HC_vs_EMCI, LMCI_vs_AD);
+
  
 %% Filter Feature selection
-[FilteredMatrix, FilterdIndex] = Filter_Feature_Rank_importance(LMCI_vs_AD, 1/2);
+[FilteredMatrix, FilterdIndex] = Filter_Feature_Rank_importance(HC_vs_EMCI_LMCI_AD, 1/2);
 %% Wrapper Feature selection
 [Selected_train_data, SelectedFeatures_in_RankImportanceOrder] ...
     = WrapperFeatureSelection(FilteredMatrix, 0);
