@@ -12,15 +12,16 @@ y = Matrix(:, 1);
 
 SelectedLabel = [];
 if use_predefined_sequence == 1
-    SelectedLabel =  [8 295 419 724 743 881 1095 1272 1341 1543 ];    
+    SelectedLabel =  [2 7 10 11 17 37 41 56 75 81 116 142 152 172 173 178 181 189 201 247 460 473 499 512 570 588 612 640 742 759 810 858 969 1005 1059 1208 1322 1346 1356 1421 1489 1655 1665 1734 1772 1879 2082 2215 2297 2299 2330 2401 2460];
 
 else
     c = cvpartition(y,'KFold',10);
-    opts = statset('display', 'iter',  'TolTypeFun','rel', 'TolFun', 1e-16, 'TolX', 1e-12);
+    opts = statset('display', 'iter',  'TolTypeFun','abs', 'TolFun', 1e-16);
     % multi-class recognition
     fun = @(train_data,train_labels,test_data,test_labels) ...
         sum(predict(fitcecoc(train_data,train_labels), test_data) ~= test_labels);   
     % end multi-class
+    
     % fun = @(train_data,train_labels,test_data,test_labels) ...
     %   sum(predict(fitcsvm(train_data,train_labels,'KernelFunction','rbf'), test_data) ~= test_labels); 
     [fs,history] = sequentialfs(fun,X,y,'cv',c,'options',opts);
@@ -144,4 +145,4 @@ SelectedFeatures_in_RankImportanceOrder = SelectedLabel;
 % [12 22 277 610 1439 1543 ];                               Accuracy: 53%
 
 %% temp result HC_vs_MCI_vs_AD
-% [45 62 104 335 1479 ];                                    Accuracy: 73.6%
+% [2 7 10 11 17 37 41 56 75 81 116 142 152 172 173 178 181 189 201 247 460 473 499 512 570 588 612 640 742 759 810 858 969 1005 1059 1208 1322 1346 1356 1421 1489 1655 1665 1734 1772 1879 2082 2215 2297 2299 2330 2401 2460];
