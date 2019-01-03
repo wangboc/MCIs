@@ -22,8 +22,10 @@ else
         sum(predict(fitcecoc(train_data,train_labels), test_data) ~= test_labels);   
     % end multi-class
     
+    % two-class recognition
     % fun = @(train_data,train_labels,test_data,test_labels) ...
     %   sum(predict(fitcsvm(train_data,train_labels,'KernelFunction','rbf'), test_data) ~= test_labels); 
+    % end two-class recognition
     [fs,history] = sequentialfs(fun,X,y,'cv',c,'options',opts);
     SelectedLabel = 1:size(Matrix, 2);
     SelectedLabel = SelectedLabel(fs);
