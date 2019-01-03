@@ -17,7 +17,7 @@ if use_predefined_sequence == 1
 else
     c = cvpartition(y,'KFold',10);
     opts = statset('display', 'iter',  'TolTypeFun','abs', 'TolFun', 1e-16);
-    % this is a multi-class version
+    
     % multi-class recognition
     fun = @(train_data,train_labels,test_data,test_labels) ...
         sum(predict(fitcecoc(train_data,train_labels), test_data) ~= test_labels);   
