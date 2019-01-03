@@ -43,12 +43,10 @@ MCI_vs_AD    = cat(1, Subject_MCI, Subject_AD);
 
 LMCI_vs_AD   = cat(1, Subject_LMCI, Subject_AD);
 
-HC_vs_MCI_AD = cat(1, HC_vs_MCI, Subject_AD);
-HC_vs_EMCI_vs_LMCI_vs_AD = cat(1, HC_vs_EMCI, LMCI_vs_AD);
  
 %% Filter Feature selection
 if strcmp(filterFS, 'Rank')
-    [FilteredMatrix, FilterdIndex] = Filter_Feature_Rank_importance(HC_vs_MCI_AD, 4/5);
+    [FilteredMatrix, FilterdIndex] = Filter_Feature_Rank_importance(HC_vs_MCI_AD, 1/2);
 elseif strcmp(filterFS, 'NCA')
     [FilteredMatrix, FilterdIndex] = NCA(HC_vs_MCI_AD);
 elseif strcmp(filterFS, 'Predefined')    
