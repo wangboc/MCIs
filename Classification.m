@@ -14,19 +14,19 @@ filterFS = 'Rank';
 UsePresetSequence_in_WrapperFS = 0;
 
 %% load data
-load('./Data/BCTs/0.HC.mat');
+load('./Data_with_HC=24/BCTs/0.HC.mat');
 Subject_HC = subjects;
 
-load('./Data/BCTs/1.EMCI.mat');
+load('./Data_with_HC=24/BCTs/1.EMCI.mat');
 Subject_EMCI = subjects;
 
-load('./Data/BCTs/2.MCI.mat');
+load('./Data_with_HC=24/BCTs/2.MCI.mat');
 Subject_MCI = subjects;
 
-load('./Data/BCTs/3.LMCI.mat');
+load('./Data_with_HC=24/BCTs/3.LMCI.mat');
 Subject_LMCI = subjects;
 
-load('./Data/BCTs/4.AD.mat');
+load('./Data_with_HC=24/BCTs/4.AD.mat');
 Subject_AD = subjects;
 
 HC_vs_EMCI   = cat(1, Subject_HC, Subject_EMCI);
@@ -45,12 +45,18 @@ LMCI_vs_AD   = cat(1, Subject_LMCI, Subject_AD);
 
 HC_vs_MCI_AD = cat(1, HC_vs_MCI, Subject_AD);
 HC_vs_EMCI_vs_LMCI_vs_AD = cat(1, HC_vs_EMCI, LMCI_vs_AD);
- 
+
+% delete subgraph centrality
+HC_vs_EMCI_vs_LMCI_vs_AD(:, 4336:4695) = [];
+for index = 2:size(HC_vs_EMCI_vs_LMCI_vs_AD, 2)
+    HC_vs_EMCI_vs_LMCI_vs_AD(:, index) = mapminmax(HC_vs_EMCI_vs_LMCI_vs_AD(:, index)')';
+end
+
 %% Filter Feature selection
 if strcmp(filterFS, 'Rank')
-    [FilteredMatrix, FilterdIndex] = Filter_Feature_Rank_importance(HC_vs_MCI_AD, 4/5);
+    [FilteredMatrix, FilterdIndex] = Filter_Feature_Rank_importance(HC_vs_EMCI_vs_LMCI_vs_AD, 1/3);
 elseif strcmp(filterFS, 'NCA')
-    [FilteredMatrix, FilterdIndex] = NCA(HC_vs_MCI_AD);
+    [FilteredMatrix, FilterdIndex] = NCA(HC_vs_EMCI_vs_LMCI_vs_AD);
 elseif strcmp(filterFS, 'Predefined')    
     X = HC_vs_EMCI_vs_LMCI_vs_AD(:, 2:size(HC_vs_EMCI_vs_LMCI_vs_AD, 2));
     y = HC_vs_EMCI_vs_LMCI_vs_AD(:, 1);
@@ -64,9 +70,9 @@ end
 %% Wrapper Feature selection
 [Selected_train_data, SelectedFeatures_in_RankImportanceOrder] ...
     = WrapperFeatureSelection(FilteredMatrix, UsePresetSequence_in_WrapperFS);
-if strcmp(filterFS, 'Predefined') ~= true
-    RankImportanceOrder_2_FeatureName(FilterdIndex, SelectedFeatures_in_RankImportanceOrder);
-end
+% if strcmp(filterFS, 'Predefined') ~= true
+%     RankImportanceOrder_2_FeatureName(FilterdIndex, SelectedFeatures_in_RankImportanceOrder);
+% end
 %% Matlab Machine learning Toolbox ...
 %% libSVM tools
 libSVM_result_filename = 'tempfiles\libSVM_result.txt';
